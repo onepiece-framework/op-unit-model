@@ -35,7 +35,7 @@ echo `git switch {$branch}`;
 
 //	Change the model name.
 echo `git mv Model.class.php {$Name}.class.php`;
-echo `git mv Model.php {$Name}.php`;
+echo `git mv ci/Model.php ci/{$Name}.php`;
 
 //	Get php files.
 $list =  array_merge(glob('*.php'), glob('./ci/*.php'));
