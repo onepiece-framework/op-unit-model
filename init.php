@@ -57,3 +57,4 @@ foreach( $list as $file_name ){
 //	Commit to git.
 echo `git add .`;
 echo `git commit -m 'Fix: Model --> {$Name}'`;
+echo `git remote rename origin model`;
