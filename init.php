@@ -37,9 +37,11 @@ echo `git switch {$branch}`;
 echo `git mv Model.class.php {$Name}.class.php`;
 echo `git mv Model.php {$Name}.php`;
 
-//	Loop all php files.
-$list = glob('*.php');
+//	Get php files.
+$list =  array_merge(glob('*.php'), glob('./ci/*.php'));
 $list[] = 'README.md';
+
+//	Loop all php files.
 foreach( $list as $file_name ){
 	//	...
 	if( $file_name === basename(__FILE__) ){
