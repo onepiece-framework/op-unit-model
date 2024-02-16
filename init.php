@@ -41,6 +41,11 @@ echo `git mv Model.php {$Name}.php`;
 $list = glob('*.php');
 $list[] = 'README.md';
 foreach( $list as $file_name ){
+	//	...
+	if( $file_name === basename(__FILE__) ){
+		continue;
+	}
+	//	...
 	$file = file_get_contents($file_name);
 	$file = str_replace('Model', $Name, $file);
 	$file = str_replace('model', $name, $file);
