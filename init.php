@@ -22,6 +22,7 @@ namespace OP;
 $branch = $_SERVER['argv'][1] ?? null;
 $name = basename(__DIR__);
 $Name = ucfirst($name);
+$NAME = strtoupper($name);
 
 //	Validation.
 if( empty($branch) ){
@@ -49,8 +50,9 @@ foreach( $list as $file_name ){
 	}
 	//	...
 	$file = file_get_contents($file_name);
-	$file = str_replace('Model', $Name, $file);
 	$file = str_replace('model', $name, $file);
+	$file = str_replace('Model', $Name, $file);
+	$file = str_replace('MODEL', $NAME, $file);
 	file_put_contents($file_name, $file);
 }
 
