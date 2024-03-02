@@ -21,10 +21,12 @@ namespace OP;
 /* @var $ci UNIT\CI */
 $ci = OP::Unit('CI');
 
-//	Test
-$result =  null;
-$args   = ['a','b'];
-$ci->Set('Test', $result, $args);
+//	Template
+$arg1   = 'foo';
+$arg2   = 'bar';
+$args   = ['ci.phtml',['arg1'=>$arg1, 'arg2'=>$arg2]];
+$result = $arg1 . $arg2;
+$ci->Set('Template', $result, $args);
 
 //	...
 return $ci->GenerateConfig();
