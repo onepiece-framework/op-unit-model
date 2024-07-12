@@ -18,8 +18,8 @@ declare(strict_types=1);
  */
 namespace OP;
 
-/* @var $ci UNIT\CI */
-$ci = OP::Unit('CI');
+/* @var $ci UNIT\CI\CI_Config */
+$ci = OP::Unit('CI')::Config();
 
 //	Template
 $arg1   = 'foo';
@@ -29,4 +29,4 @@ $result = $arg1 . $arg2;
 $ci->Set('Template', $result, $args);
 
 //	...
-return $ci->GenerateConfig();
+return $ci->Get();
