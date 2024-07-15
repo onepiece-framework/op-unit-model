@@ -22,11 +22,12 @@ namespace OP;
 $ci = OP::Unit('CI')::Config();
 
 //	Template
+$method = 'Template';
 $arg1   = 'foo';
 $arg2   = 'bar';
 $args   = ['ci.phtml',['arg1'=>$arg1, 'arg2'=>$arg2]];
 $result = $arg1 . $arg2;
-$ci->Set('Template', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	...
 return $ci->Get();
