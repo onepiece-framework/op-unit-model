@@ -24,15 +24,12 @@ $name = basename(__DIR__);
 $Name = ucfirst($name);
 $NAME = strtoupper($name);
 
-//	Validation.
-if( empty($branch) ){
-	echo "Empty the Branch name.\n";
-	exit(__LINE__);
+//	If specify the branch.
+if( $branch ){
+	//	Init git branch.
+	echo `git branch {$branch}`;
+	echo `git switch {$branch}`;
 }
-
-//	Init git branch.
-echo `git branch {$branch}`;
-echo `git switch {$branch}`;
 
 //	Change the model name.
 echo `git mv Model.class.php {$Name}.class.php`;
