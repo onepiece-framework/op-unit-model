@@ -17,3 +17,8 @@ declare(strict_types=1);
  *
  */
 namespace OP;
+
+/** Include
+ *
+ */
+include(__DIR__.'/Empty.class.php');
